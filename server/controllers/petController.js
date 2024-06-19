@@ -8,7 +8,7 @@ const getPets = async (req, res) => {
 
     res.status(200).json(pets)
 }
-
+// use this set up to pull tiers differently
 const getPetsOne = async (req, res) => {
     const petsOne = await Pet.find({ cost: 10 }).sort({ createdAt: -1 })
 
