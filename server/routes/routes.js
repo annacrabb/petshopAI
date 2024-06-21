@@ -30,7 +30,7 @@ router.patch('/sponsor/:id', updatePet)
 
 router.get('./signup', () => {});
 router.get('./login', () => {});
-router.get('./sponsor', () => {});
+
 
 
 module.exports = router;

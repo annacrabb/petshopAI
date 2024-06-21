@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 // get all pets CHANGE TO MAKE TIERS. await Pet.find({cost: 10})
 const getPets = async (req, res) => {
     const pets = await Pet.find({}).sort({ createdAt: -1 })
-
+    console.log('list of pets:', pets)
     res.status(200).json(pets)
 }
 // use this set up to pull tiers differently
@@ -41,10 +41,37 @@ res.status(200).json(pet)
 const createPet = async (req, res) => {
     const { petName, petType, picture, desc, cost } = req.body
 
+    console.log('Received data:', req.body)
+
+    let emptyFields = []
+
+    if (!petName) {
+        emptyFields.push('petName')
+    }
+    if (!petType) {
+        emptyFields.push('petType')
+    }
+    if (!picture) {
+        emptyFields.push('picture')
+    }
+    if (!desc) {
+        emptyFields.push('desc')
+    }
+    if (!cost) {
+        emptyFields.push('cost')
+    }
+
+    if(emptyFields.length > 0){
+        console.log('Empty fields:', emptyFields)
+        return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
+    }
+
+
     try {
         const pet = await Pet.create({ petName, petType, picture, desc, cost })
         res.status(200).json(pet)
     } catch (error) {
+        console.error('Error creating pet:', error.message)
         res.status(400).json({ error: error.message })
     }
 }
@@ -58,7 +85,6 @@ const createSponsor = async (req, res) => {
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
-    res.json({ mssg: 'post a new sponsor' })
 }
 
 
