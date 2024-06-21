@@ -10,9 +10,9 @@ const Acknowledgements = () => {
   useEffect(() => {
     axios.get('http://localhost:4000/api/routes/acknowledgements')
       .then(response => {
-        if (response.data && response.data.sponsors) {
+        if (response.data) {
 
-          setSponsors(response.data.sponsors);
+          setSponsors(response.data);
           console.log('got the sponsors', sponsors)
         } else {
           console.log('no sponsors in data')

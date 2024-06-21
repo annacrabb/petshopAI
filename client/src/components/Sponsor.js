@@ -1,25 +1,56 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../assets/sponsor.banner.png";
+import Hermit from "../assets/hermit.crab.cozumel.jack.png"
 import PetDetails from '../components/PetDetails';
 import axios from 'axios';
 
 function Sponsor() {
   const [pets, setPets] = useState(null);
+  const [petsOne, setPetsOne] = useState(null);
+  const [petsTwo, setPetsTwo] = useState(null);
+  const [petsThree, setPetsThree] = useState(null);
+  
+useEffect(() => {
+  axios.get('http://localhost:4000/api/routes/sponsor/tierOne')
+      .then(response => {
+        if (response.data) {
+          setPetsOne(response.data);
+          console.log('got tier one', petsOne)
+        } else {
+          console.log('no pets in tier one')
+        }
+      })
+      .catch(error => {
+        console.log('error:', error)
+      })
 
-  useEffect(() => {
-    axios.get('http://localhost:4000/api/routes/sponsor')
-    .then(response => {
-      if (response.data && response.data.pets) {
-        setPets(response.data.pets);
-        console.log('got the pets', pets)
-      } else {
-        console.log('no pets in data')
-      }
-    })
-    .catch(error => {
-      console.log('error: ', error);
-    });
-  }, [])
+  axios.get('http://localhost:4000/api/routes/sponsor/tierTwo')
+      .then(response => {
+        if (response.data) {
+          setPetsTwo(response.data);
+          console.log('got tier two', petsTwo)
+        } else {
+          console.log('no pets in tier two')
+        }
+      })
+      .catch(error => {
+        console.log('error:', error)
+      })
+
+  axios.get('http://localhost:4000/api/routes/sponsor/tierThree')
+      .then(response => {
+        if (response.data) {
+          setPetsThree(response.data);
+          console.log('got tier three', petsThree)
+        } else {
+          console.log('no pets in tier three')
+        }
+      })
+      .catch(error => {
+        console.log('error:', error)
+      })
+}, [])
+
 
   return (
     <div>
@@ -36,6 +67,7 @@ function Sponsor() {
       <div className="container m-5 text-center">
         <h1 className="customHeader">Sponsor</h1>
       </div>
+
 
       {/* Content */}
 
@@ -74,10 +106,8 @@ function Sponsor() {
           </li>
         </ul>
       </div>
-      <div className="container text-center pets">
-        {pets ? <p>{pets.petType}</p> : <p>Loading...</p>}
-  
-        {pets && pets.map((pet) => (
+      <div className="container text-center pets">  
+        {petsOne && petsOne.map((pet) => (
         <PetDetails key={pet._id} pet={pet}/>))}
       <hr />
       </div>
@@ -120,7 +150,9 @@ function Sponsor() {
         </ul>
       </div>
       <div className="container text-center">
-        <div id="marketTwo"></div>
+      {petsTwo && petsTwo.map((pet) => (
+        <PetDetails key={pet._id} pet={pet} />
+      ))}
         <hr />
       </div>
 
@@ -164,7 +196,9 @@ function Sponsor() {
         </p>
       </div>
       <div className="container text-center">
-        <div id="marketThree"></div>
+      {petsThree && petsThree.map((pet) => (
+        <PetDetails key={pet._id} pet={pet} />
+      ))}
       </div>
     </div>
   );

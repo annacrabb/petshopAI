@@ -3,7 +3,10 @@ const {
     createPet,
     createSponsor,
     getPet,
-    getPets,
+    // getPets,
+    getPetsOne,
+    getPetsTwo,
+    getPetsThree,
     getSponsors,
     updatePet
 } = require('../controllers/petController')
@@ -11,7 +14,11 @@ const {
 const router = express.Router();
 
 //GET all pets
-router.get('/sponsor', getPets)
+// router.get('/sponsor', getPets)
+
+router.get('/sponsor/tierOne', getPetsOne)
+router.get('/sponsor/tierTwo', getPetsTwo)
+router.get('/sponsor/tierThree', getPetsThree)
 
 //GET all sponsors
 router.get('/acknowledgements', getSponsors)
