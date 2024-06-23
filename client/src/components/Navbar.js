@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLogout } from '../hooks/useLogout'
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -8,6 +9,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 function CustomNav() {
+const { logout } = useLogout()
+  const handleClick = () => {
+logout()
+  }
     return (
         <Navbar expand="lg" sticky="top" className="nav">
         <Container>
@@ -26,6 +31,9 @@ function CustomNav() {
               <NavDropdown.Divider />
               <NavDropdown.Item href="/Signup">View Sponsorship</NavDropdown.Item>
               </NavDropdown>
+              <div>
+                <button onClick={handleClick}>Log out</button>
+              </div>
             </Nav>
           </Navbar.Collapse>
         </Container>
