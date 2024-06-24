@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const Conservation = () => {
   return (
-    <div>
+    <div className="body">
       {/* Header Photo */}
       <div>
         <img src={Banner} className="img-fluid" width="100%" alt="reef" />

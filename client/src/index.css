@@ -100,6 +100,7 @@
       border: 2px solid gray; 
       padding: 1em;
       box-shadow: 5px 5px 5px darkgray;
+      background-color: white;
   }
   
   i{
@@ -131,6 +132,7 @@
   footer {
     background-color: #D8C8E8;
     padding-bottom: 1px;
+    margin-top: 1px;
   }
 
   .badge {
@@ -150,11 +152,10 @@
   
 
 .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow color and intensity as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   }
 
   .acknow {
     padding-bottom: 1px;
-    margin-bottom: 1px;
   }
   
