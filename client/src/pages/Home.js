@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../assets/home.banner.png';
-import Logo from '../assets/TIDE TOGETHER.png';
+import Logo from '../assets/slimtidetogether.png';
 import Coral from '../assets/home.pic.1.png';
 import Palancar from '../assets/home.pic.2.png';
 import Brain from '../assets/home.pic.3.png';
@@ -19,7 +19,7 @@ function Home() {
 
             {/* Title */}
             <div className="container my-5 display-4 text-center">
-                <img src={Logo} alt="tide together logo" width="400px" />
+                <img src={Logo} alt="tide together logo" width="300px" />
             </div>
 
             {/* Content - Main Page */}

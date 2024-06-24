@@ -1,11 +1,11 @@
 import React from 'react';
 import Banner from '../assets/conservation.banner.jack.png';
 import Carousel from 'react-bootstrap/Carousel';
-import Slide1 from './CarouselImages/Slide1';
-import Slide2 from './CarouselImages/Slide2';
-import Slide3 from './CarouselImages/Slide3';
-import Slide4 from './CarouselImages/Slide4';
-import Slide5 from './CarouselImages/Slide5';
+import Slide1 from '../components/CarouselImages/Slide1';
+import Slide2 from '../components/CarouselImages/Slide2';
+import Slide3 from '../components/CarouselImages/Slide3';
+import Slide4 from '../components/CarouselImages/Slide4';
+import Slide5 from '../components/CarouselImages/Slide5';
 
 const Conservation = () => {
   return (

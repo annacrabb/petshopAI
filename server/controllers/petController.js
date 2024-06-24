@@ -2,13 +2,7 @@ const Pet = require('../models/petModel')
 const Sponsor = require('../models/sponsorModel')
 const mongoose = require('mongoose')
 
-// get all pets CHANGE TO MAKE TIERS. await Pet.find({cost: 10})
-// const getPets = async (req, res) => {
-//     const pets = await Pet.find({}).sort({ createdAt: -1 })
-//     console.log('list of pets:', pets)
-//     res.status(200).json(pets)
-// }
-// use this set up to pull tiers differently
+
 const getPetsOne = async (req, res) => {
     const petsOne = await Pet.find({ cost: 10 }).sort({ createdAt: -1 })
 
@@ -34,18 +28,34 @@ const getSponsors = async (req, res) => {
 
 // get a single pet
 const getPet = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({ error: 'No such pet' })
+    try {
+        const pet = await Pet.findById(id);
+        if (!pet) {
+            return res.status(404).json({ error: 'Pet not found' });
+        }
+        res.status(200).json(pet);
+    } catch (error) {
+        console.error('Error fetching pet:', error.message);
+        res.status(500).json({ error: error.message });
     }
-    const pet = await Pet.findById(id)
+};
 
-    if (!pet) {
-        return res.status(404).json({ error: 'No such pet' })
-    }
-    res.status(200).json(pet)
-}
+
+// const getPet = async (req, res) => {
+//     const { id } = req.params
+
+//     if (!mongoose.Types.ObjectId.isValid(id)) {
+//         return res.status(404).json({ error: 'No such pet' })
+//     }
+//     const pet = await Pet.findById(id)
+
+//     if (!pet) {
+//         return res.status(404).json({ error: 'No such pet' })
+//     }
+//     res.status(200).json(pet)
+// }
 
 // create a new pet
 const createPet = async (req, res) => {
@@ -81,7 +91,7 @@ const createPet = async (req, res) => {
         const pet = await Pet.create({ petName, petType, picture, desc, cost })
         res.status(200).json(pet)
     } catch (error) {
-        console.error('Error creating pet:', error.message)
+        console.log('Error creating pet:', error.message)
         res.status(400).json({ error: error.message })
     }
 }
@@ -121,7 +131,6 @@ const updatePet = async (req, res) => {
 module.exports = {
     createPet,
     createSponsor,
-    // getPets,
     getPetsOne,
     getPetsTwo,
     getPetsThree,

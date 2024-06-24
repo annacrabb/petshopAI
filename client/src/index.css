@@ -1,13 +1,129 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* testing out opaque background in carousel */
+.carouselText{
+  backdrop-filter: blur(50px);
+  padding: 5px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* crab background */
+.body{
+  background-image: url('./assets/crab.png');
+  background-size: 300px;
+  background-position: center;
+  background-color: #ebebeb;
+  
 }
+
+/* logo circular */
+.logo {
+  border-radius: 50%;
+  width: 200px;
+}
+
+/* Make h5 headings smaller on screens smaller than 992px */
+
+@media (max-width: 992px){
+  #carousel h5 {
+      font-size: 1em;
+      }
+  
+  }
+  
+  @media (max-width: 768px){
+      footer li{
+          font-size: .9em;
+      }
+      .product img{
+          width: 400px;
+      }
+      .product h5{
+          font-size: 1.15em;
+      }
+      p{
+          font-size: .9em;
+      }
+      
+  }
+  
+  /* Add custom font + size to headings */
+  h1 {
+      font-family: "Yellowtail";
+      font-size: 4em;
+  }
+  
+  h2{
+      font-family: "Yellowtail";
+      font-size: 2em;
+  }
+  
+  button.btn{
+      background-color: #C16dac;
+      border-color: #c16dac;
+      font-weight: bold
+  }
+  
+  button.btn:hover{
+      background-color: #c97fb6;
+  }
+  
+  nav{
+      background-color: #6dacc1;
+
+  }
+  
+  .navHeader{
+      font-family: "Yellowtail";
+  }
+
+  .navLink:hover {
+      color: #ebebeb;
+  }
+  
+  .customBorder{
+      border: 2px solid gray; 
+      padding: 1em;
+      box-shadow: 5px 5px 5px darkgray;
+  }
+  
+  i{
+      padding: 5px;
+      margin-top: 4px;
+      font-size: 1.5em;
+      }
+  
+  a.social{
+      text-decoration: none;
+  }
+
+  input.error {
+      border: 1px solid darkred;
+  }
+  form .error {
+      border: 1px solid darkred;
+  }
+
+
+  footer {
+    background-color: #D8C8E8;
+  }
+
+  .badge {
+    background-color: #6dacc1 !important;
+    font-size: 1rem;
+  }
+
+  .tier-perk {
+    margin-bottom: 1rem; /* Add space between perks */
+  }
+
+.card-badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Adjust margin as needed */
+  }
+  
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow color and intensity as needed */
+  }
+  
