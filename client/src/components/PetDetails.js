@@ -27,7 +27,8 @@ const PetDetails = ({ pet }) => {
                 <span>
                     <p className="customBorder">{pet.desc}</p>
                     <p><em className="text-muted">${pet.cost} per month</em></p>
-                    <Link to={`/${pet._id}`} className="btn">Sponsor {pet.petName}</Link>
+                    <button className="btn">Sponsor {pet.petName}</button>
+                    {/* <Link to={`/${pet._id}`} className="btn">Sponsor {pet.petName}</Link> */}
                 </span>
             </div>
         </div>
