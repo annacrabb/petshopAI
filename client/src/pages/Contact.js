@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../forms/ContactForm';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Contact = () => {

@@ -59,11 +59,28 @@
   button.btn{
       background-color: #C16dac;
       border-color: #c16dac;
-      font-weight: bold
+      font-weight: bold;
+      border: none !important;
+      
+  }
+  .btn{
+      background-color: #C16dac;
+      border-color: #c16dac;
+      font-weight: bold;
+      border: none !important;
+      
   }
   
   button.btn:hover{
       background-color: #c97fb6;
+  }
+  .btn:hover{
+      background-color: #c97fb6;
+  }
+
+  .btn.btn-success, .btn.btn-success:hover .btn.btn-success.active.focus {
+    background-color: #A95F97 !important;
+
   }
   
   nav{
@@ -102,9 +119,18 @@
       border: 1px solid darkred;
   }
 
+  .errorMsg {
+    border: 2px solid#C16D82;
+    background-color: #F0DAE0; 
+    border-radius: 10px;
+    padding: 10px;
+    color: #C16D82;
+}
+
 
   footer {
     background-color: #D8C8E8;
+    padding-bottom: 1px;
   }
 
   .badge {
@@ -125,5 +151,10 @@
 
 .card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust shadow color and intensity as needed */
+  }
+
+  .acknow {
+    padding-bottom: 1px;
+    margin-bottom: 1px;
   }
   

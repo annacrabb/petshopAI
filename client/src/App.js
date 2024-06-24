@@ -11,10 +11,9 @@ import Contact from './pages/Contact';
 import Sponsor from './pages/Sponsor';
 import Acknowledgements from './pages/Acknowledgements';
 import Signup from './pages/Signup';
-import PetForm from './components/PetForm';
-import SponsorForm from './components/SponsorForm';
+import PetForm from './forms/PetForm';
+import SponsorForm from './forms/SponsorForm';
 import Login from './pages/Login';
-import SponsorLanding from './pages/SponsorLanding';
 import Tiers from './pages/Tiers';
 import PetDetailsPage from './pages/PetDetailsPage';
 
@@ -50,7 +49,6 @@ function App() {
           <Route
             path='/login'
             element={!user ? <Login /> : <Navigate to="/login" />} />
-          <Route path='/sponsorlanding' element={<SponsorLanding />} />
         </Routes>
         <Footer />
       </BrowserRouter>

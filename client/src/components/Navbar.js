@@ -29,11 +29,11 @@ function CustomNav() {
             <Nav.Link className="navLink" href="/contact">Contact</Nav.Link>
             <NavDropdown title="Sponsor" id="basic-nav-dropdown" className="navLink">
               <NavDropdown.Item href="/tiers">Tiers</NavDropdown.Item>
-              <NavDropdown.Item href="/sponsor">Members</NavDropdown.Item>
+              <NavDropdown.Item href="/sponsor">Sponsorship</NavDropdown.Item>
             </NavDropdown>
-            {user ? <div>
+            {/* {user ? <div>
               <button onClick={handleClick}>Log Out</button>
-            </div> : ''}
+            </div> : ''} */}
           </Nav>
         </Navbar.Collapse>
       </Container>

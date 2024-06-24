@@ -6,6 +6,7 @@ import Slide2 from '../components/CarouselImages/Slide2';
 import Slide3 from '../components/CarouselImages/Slide3';
 import Slide4 from '../components/CarouselImages/Slide4';
 import Slide5 from '../components/CarouselImages/Slide5';
+import { Link } from 'react-router-dom';
 
 const Conservation = () => {
   return (
@@ -25,7 +26,7 @@ const Conservation = () => {
         Welcome to our Conservation Efforts page, where we proudly showcase the diverse array of initiatives your generous donations are supporting. At Tide Together, we're committed to seeking out and funding groundbreaking research. From harnessing the power of artificial intelligence to using assisted evolution to grow heat-resistant coral, we welcome you to dive in to our past and current funding opportunities.
       </div>
 
-      <div className="container d-md-block">
+      <div className="container d-none d-md-block">
       <Carousel fade>
         <Carousel.Item>
           <Slide1 text="coral research in Hawai'i"/>
@@ -67,7 +68,7 @@ const Conservation = () => {
       </div>
 
       <div className="container my-5 lead">
-        These are just a few of the efforts we sponsor, and we're always looking for worth-while endeavors to add to our list! Feel free to fill out our <a className="text-muted" href="contact.html#contactForm">Contact Form</a> if you'd like to inform of us new sponsorship opportunities.
+        These are just a few of the efforts we sponsor, and we're always looking for worth-while endeavors to add to our list! Feel free to fill out our <Link to='/contact' className="text-body-secondary">Contact Form</Link> if you'd like to inform of us new sponsorship opportunities.
       </div>
     </div>
   );

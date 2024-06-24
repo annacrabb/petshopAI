@@ -4,27 +4,22 @@ import axios from 'axios';
 
 const PetDetailsPage = ({ match }) => {
     // const { user } = useAuthContext(); // Fetch user from context
-    const { user } = true;
+    // const { user } = true;
     const [pet, setPet] = useState(null);
 
     useEffect(() => {
         const fetchPet = async () => {
             try {
-                if (user) {
-                    const response = await axios.get(`http://localhost:4000/api/routes/sponsor/${match.params.id}`, {
-                        headers: {
-                            'Authorization': `Bearer ${user.token}`
-                        }
-                    });
-                    setPet(response.data);
-                }
+                const response = await axios.get(`http://localhost:4000/api/routes/sponsor/${match.params.id}`);
+                setPet(response.data);
+
             } catch (error) {
                 console.error('Error fetching pet:', error);
             }
         };
 
-        fetchPet(); // Always fetch pet if user exists
-    }, [match.params.id, user]); // Dependency on match.params.id and user
+        fetchPet(); 
+    }, [match.params.id]); // Dependency on match.params.id and user
 
     if (!pet) {
         return <div>Loading...</div>;

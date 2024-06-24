@@ -93,11 +93,11 @@ const ContactForm = () => {
                     />
                 </Form.Group>
 
-                <Button variant="dark" type="submit">
+                <Button type="submit">
                     Submit
                 </Button>
 
-                {error && <div className="error mt-3">{error}</div>}
+                {error && <div className="errorMsg mt-3">{error}</div>}
             </Form>
 
             <Modal show={showModal} onHide={() => setShowModal(false)}>
@@ -105,7 +105,7 @@ const ContactForm = () => {
                     <Modal.Title>Message Sent</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    Thank you for reaching out to us. Your message has been successfully sent. We will get back to you shortly.
+                    Your message just made a big splash! We'll get back to you in no time.
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="dark" onClick={() => setShowModal(false)}>

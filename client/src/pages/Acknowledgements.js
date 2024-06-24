@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import Logo from '../assets/TIDE TOGETHER.png';
+import Logo from '../assets/slimtidetogether.png';
 import Banner from '../assets/acknow.banner.png';
 
 const Acknowledgements = () => {
@@ -25,7 +25,7 @@ const Acknowledgements = () => {
 
 
   return (
-    <div className="body">
+    <div className="body acknow">
       {/* Header Photo */}
       <div>
         <img
@@ -52,21 +52,10 @@ const Acknowledgements = () => {
       </div>
 
       <div className="container text-center">
-        {sponsors ? <p>{sponsors.sponsorName}</p> : <p>Loading...</p>}
-
         {sponsors && sponsors.map((sponsor) => (
-          <p>{sponsor.sponsorName}</p>
+          <h2>{sponsor.sponsorName}</h2>
         ))}
       </div>
-
-      <div className="container my-5 display-4 text-center logo" style={{ fontFamily: "Yellowtail" }}>
-        <img
-          src={Logo}
-          alt="tide together logo"
-          width="400px"
-        />
-      </div>
-
 
       <div className="container my-5">
         We'd also like to thank award-winning underwater photographer Jack Israel for the use of his unmatched

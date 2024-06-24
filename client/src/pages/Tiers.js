@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Badge, Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import Signup from '../pages/Signup';
+import { Link } from 'react-router-dom';
 
 function Tiers() {
   const [showModal, setShowModal] = React.useState(false);
@@ -160,7 +161,7 @@ function Tiers() {
                   </Col>
                 </Row>
                 <p>
-                  Check out our current Ocean Ambassadors <a href="acknowledgements.html">here</a>!
+                  Check out our current Ocean Ambassadors <Link to='/acknowledgements' className="text-body-secondary">here</Link>!
                 </p>
               </Card.Body>
             </Card>
@@ -178,20 +179,14 @@ function Tiers() {
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
-
+          <h2 className="text-center ms-4 mt-3">Dive In!</h2>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Signup />
         </Modal.Body>
         <Modal.Footer>
-          {/* <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Sign Up
-          </Button> */}
-          Already have an account? Log in Here!
+          {/* Already have an account? Log in <Link to='/login' className="text-body-secondary">here</Link>! */}
         </Modal.Footer>
       </Modal>
     </div>
